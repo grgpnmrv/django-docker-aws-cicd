@@ -1,0 +1,40 @@
+# Terraform: Assuming all Terraform files are in the /terraform directory
+aws-ec2-terraform/*.tfstate
+aws-ec2-terraform/*.tfstate.*
+aws-ec2-terraform/.terraform/
+aws-ec2-terraform/crash.log
+aws-ec2-terraform/*.tfvars
+aws-ec2-terraform/*.override
+aws-ec2-terraform/*.override.tf
+aws-ec2-terraform/*.terraform.lock.hcl
+
+# Django: Assuming all Django files are in the /django directory
+django-project/web/*.log
+django-project/web/*.pot
+django-project/web/*.pyc
+django-project/web/*.pyo
+django-project/web/__pycache__/
+django-project/web/db.sqlite3
+django-project/web/media/
+django-project/web/static/
+django-project/web/*.env
+django-project/web/*.env.*
+django-project/web/*.sqlite3
+
+# Python virtual environment: Common across the project
+venv/
+env/
+.venv/
+.env/
+
+# IDE/Editor files (across the project)
+.vscode/
+.idea/
+*.swp
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Jupyter Notebooks checkpoints
+.ipynb_checkpoints/
