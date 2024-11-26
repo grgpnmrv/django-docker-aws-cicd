@@ -13,7 +13,7 @@ django-project/web/*.log
 django-project/web/*.pot
 django-project/web/*.pyc
 django-project/web/*.pyo
-django-project/web/__pycache__/
+django-project/web/*/__pycache__/
 django-project/web/db.sqlite3
 django-project/web/media/
 django-project/web/static/
