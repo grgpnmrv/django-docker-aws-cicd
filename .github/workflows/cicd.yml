@@ -43,7 +43,7 @@ jobs:
         username: ${{ secrets.EC2_USER }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
-          cd /home/ec2-user
+          cd /home/ec2-user/django-docker-aws-cicd
           docker-compose pull  # Pull the latest image from Docker Hub
           docker-compose up -d --build  # Start the container in detached mode
 
