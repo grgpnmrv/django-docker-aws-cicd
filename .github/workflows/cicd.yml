@@ -30,10 +30,12 @@ jobs:
 
     - name: Build Docker image
       run: |
+        cd django-project
         docker-compose -f docker-compose.yml build
 
     - name: Push Docker image to Docker Hub
       run: |
+        cd django-project
         docker-compose -f docker-compose.yml push
 
     - name: SSH into EC2 and deploy
