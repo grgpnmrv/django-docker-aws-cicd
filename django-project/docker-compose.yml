@@ -13,6 +13,8 @@ services:
 
   nginx:
     image: grgpnmrv/nginx:latest
+    build: 
+      context: ./nginx
     ports:
       - "80:80"
     volumes:
