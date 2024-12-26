@@ -44,8 +44,17 @@ jobs:
         username: ${{ secrets.EC2_USER }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
-          git clone git@github.com:grgpnmrv/django-docker-aws-cicd.git
-          cd django-docker-aws-cicd/django-project
+          REPO_URL="git@github.com:grgpnmrv/django-docker-aws-cicd.git"
+          TARGET_DIR="django-docker-aws-cicd"
+
+          if [ -d "$TARGET_DIR" ]; then
+            cd "$TARGET_DIR"
+            git pull
+          else
+            ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+            git clone "$REPO_URL"
+          fi
+
           echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
           docker-compose pull  # Pull the latest image from Docker Hub
           docker-compose up -d  # Start the container in detached mode
